@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable eqeqeq */
 /* eslint-disable tailwindcss/no-custom-classname */
 import Head from 'next/head';
