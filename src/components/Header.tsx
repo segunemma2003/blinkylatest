@@ -9,11 +9,11 @@ function Header() {
     <div className="flex h-fit w-full flex-row px-3 py-4 pb-2">
       <div className="w-2/12 text-2xl font-semibold text-[#7749F8]">Blinky</div>
       <div className="flex w-10/12 flex-row justify-between px-3">
-        <div className="focus-within:text-black-900 relative text-black">
+        <div className="relative text-black focus-within:text-zinc-900">
           <span className="absolute inset-y-0 left-0 flex items-center pl-2">
             <button
               type="submit"
-              className="focus:shadow-outline p-1 focus:outline-none"
+              className="p-1 focus:shadow focus:outline-none"
             >
               <svg
                 fill="none"
