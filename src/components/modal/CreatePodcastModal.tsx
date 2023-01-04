@@ -7,11 +7,13 @@ import { modalStatePodcast } from '@/atoms/modelAtom';
 
 import CreatePodCastForm from './CreatePodCastForm';
 import Loading from './Loading';
+import PodcastReady from './PodcastReady';
 
 function CreatePodcastModal() {
   const [showModal, setShowModal] = useRecoilState(modalStatePodcast);
-  const showLoading = true;
+  const showLoading = false;
   const showForm = false;
+  const showPodcast = true;
 
   const handleClose = () => {
     setShowModal(false);
@@ -28,7 +30,7 @@ function CreatePodcastModal() {
         <Toaster position="bottom-center" />
         <button
           type="button"
-          className="absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-transparent hover:bg-[#181818]"
+          className="absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-transparent hover:bg-transparent"
           onClick={handleClose}
         >
           <XIcon className="h-6 w-6" />
@@ -36,12 +38,13 @@ function CreatePodcastModal() {
 
         {/* <div className="relative pt-[56.25%]"> */}
         <div
-          className={` ${
-            showLoading && 'py-48'
-          } relative grid  place-items-center gap-6 space-y-2 rounded-lg bg-white  shadow-lg`}
+          className={` ${showLoading && 'py-48'} 
+          ${showPodcast && 'pt-24'}
+          relative grid  place-items-center gap-6 space-y-2 rounded-lg bg-white  shadow-lg`}
         >
           {showForm && <CreatePodCastForm />}
           {showLoading && <Loading />}
+          {showPodcast && <PodcastReady />}
         </div>
         {/* </div> */}
       </>
