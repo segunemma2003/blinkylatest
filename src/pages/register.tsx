@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Router from 'next/router';
 import React from 'react';
 
 function Register() {
@@ -62,12 +63,17 @@ function Register() {
                 </Link>
               </div>
 
-              <button className="w-full rounded-full bg-[#7749F8] px-12 py-4 text-white">
+              <button
+                onClick={() => {
+                  Router.push('/');
+                }}
+                className="w-full rounded-full bg-[#7749F8] px-12 py-4 text-white"
+              >
                 Register
               </button>
               <div className="flex flex-row justify-center space-x-2">
                 <p>Already have an account? </p>
-                <Link href="/register" className="underline">
+                <Link href="/login" className="underline">
                   Login
                 </Link>
               </div>

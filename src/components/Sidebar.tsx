@@ -21,7 +21,7 @@ function Sidebar() {
         <Link
           className="flex flex-row items-center gap-2
               rounded-full px-2 py-3 text-[#333333] hover:bg-[#7749F8] hover:text-white hover:opacity-80"
-          href="/"
+          href="/create-podcast"
         >
           <CiMicrophoneOn className="h-4 w-4" />
           Create New Podcast
@@ -29,7 +29,7 @@ function Sidebar() {
         <Link
           className="flex flex-row items-center gap-2
               rounded-full px-2 py-3 text-[#333333] hover:bg-[#7749F8] hover:text-white hover:opacity-80"
-          href="/"
+          href="/podcast"
         >
           <BiMicrophone className="h-4 w-4" />
           All Podcasts
@@ -37,7 +37,7 @@ function Sidebar() {
         <Link
           className="flex flex-row items-center gap-2
              rounded-full px-2 py-3 text-[#333333] hover:bg-[#7749F8] hover:text-white hover:opacity-80"
-          href="/"
+          href="/create-audiograph"
         >
           <GiSoundWaves className="h-4 w-4" />
           Create New Audiograph
@@ -45,7 +45,7 @@ function Sidebar() {
         <Link
           className="flex flex-row items-center gap-2
               rounded-full px-2 py-3 text-[#333333] hover:bg-[#7749F8] hover:text-white hover:opacity-80"
-          href="/"
+          href="/audiograph"
         >
           <BsSoundwave className="h-4 w-4" />
           All Audiographs
@@ -57,9 +57,9 @@ function Sidebar() {
           <p>mrprince@gmail.com</p>
         </div>
         <div className="flex flex-col space-y-3 px-3 py-4 shadow-lg">
-          <Link href="/">Settings</Link>
+          <Link href="/settings">Settings</Link>
           <Link href="/">Help</Link>
-          <Link href="/">Logout</Link>
+          <Link href="/register">Logout</Link>
         </div>
       </div>
     </div>

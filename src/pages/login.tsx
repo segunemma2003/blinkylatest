@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Router from 'next/router';
 import React from 'react';
 
 function login() {
@@ -42,7 +43,12 @@ function login() {
               >
                 Forgot password
               </Link>
-              <button className="w-full rounded-full bg-[#7749F8] px-12 py-4 text-white">
+              <button
+                onClick={() => {
+                  Router.push('/');
+                }}
+                className="w-full rounded-full bg-[#7749F8] px-12 py-4 text-white"
+              >
                 Login
               </button>
               <div className="flex flex-row justify-center space-x-2">
