@@ -4,12 +4,18 @@
 import Head from 'next/head';
 import React from 'react';
 import { ImBin } from 'react-icons/im';
+import { useRecoilValue } from 'recoil';
 
 import Header from '@/components/Header';
+import ViewVideo from '@/components/modal/ViewVideo';
 import Sidebar from '@/components/Sidebar';
 import Table3 from '@/components/Table3';
 
+import { modalState } from '../atoms/modelAtom';
+
 const Audiograph = () => {
+  const showModal = useRecoilValue(modalState);
+
   return (
     <div className="h-screen">
       <Head>
@@ -41,6 +47,7 @@ const Audiograph = () => {
               <Table3 show={true} />
             </div>
           </div>
+          {showModal && <ViewVideo />}
         </div>
       </div>
     </div>

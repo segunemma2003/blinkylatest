@@ -1,14 +1,18 @@
+/* eslint-disable unused-imports/no-unused-vars */
 import Image from 'next/image';
 import React from 'react';
 import { BsPlayCircle } from 'react-icons/bs';
+import { useRecoilState } from 'recoil';
 
 import Passport from '../../public/icon/passport.svg';
+import { modalState } from '../atoms/modelAtom';
 
 interface Props {
   show: boolean;
 }
 
 function Table3({ show }: Props) {
+  const [, setShowModal] = useRecoilState(modalState);
   return (
     <div
       className={`${show ? 'block' : 'hidden'} grid w-full grid-cols-4 gap-4`}
@@ -38,7 +42,10 @@ function Table3({ show }: Props) {
           <p className="text-base">Audiograph EP 1</p>
           <p className="text-sm">01/06/2022</p>
         </div>
-        <button className="absolute top-1/4 left-1/4">
+        <button
+          onClick={() => setShowModal(true)}
+          className="absolute top-1/4 left-1/4"
+        >
           <BsPlayCircle className="h-24 w-24 text-white" />
         </button>
       </div>

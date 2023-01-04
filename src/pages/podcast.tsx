@@ -4,12 +4,19 @@
 import Head from 'next/head';
 import React from 'react';
 import { ImBin } from 'react-icons/im';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 import Header from '@/components/Header';
+import CreatePodcastModal from '@/components/modal/CreatePodcastModal';
 import Sidebar from '@/components/Sidebar';
 import Table1 from '@/components/Table1';
 
+import { modalStatePodcast } from '../atoms/modelAtom';
+
 const Podcast = () => {
+  const showModal = useRecoilValue(modalStatePodcast);
+  const [, setShowModal] = useRecoilState(modalStatePodcast);
+
   return (
     <div className="h-screen">
       <Head>
@@ -22,7 +29,10 @@ const Podcast = () => {
         <div className="h-full w-10/12 justify-between bg-[#E5E5E5]  px-4 py-2">
           <div className="mb-4 flex flex-row justify-between bg-[#ffffff] p-16">
             <h1 className="text-2xl font-bold">Create new podcast</h1>
-            <button className="rounded-full bg-[#7749F8] px-8 py-2 text-white">
+            <button
+              onClick={() => setShowModal(true)}
+              className="rounded-full bg-[#7749F8] px-8 py-2 text-white"
+            >
               Create{' '}
             </button>
           </div>
@@ -41,6 +51,7 @@ const Podcast = () => {
               <Table1 show={true} />
             </div>
           </div>
+          {showModal && <CreatePodcastModal />}
         </div>
       </div>
     </div>
