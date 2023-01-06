@@ -6,6 +6,11 @@ export const modalState = atom({
 });
 
 export const modalStatePodcast = atom({
-  key: 'modalState',
+  key: 'modalStatePodcast',
+  default: false,
+});
+
+export const modalStateAudiograph = atom({
+  key: 'modalStateAudiograph',
   default: false,
 });

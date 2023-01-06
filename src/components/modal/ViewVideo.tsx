@@ -27,7 +27,7 @@ function ViewVideo() {
         <Toaster position="bottom-center" />
         <button
           type="button"
-          className="absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-transparent hover:bg-[#181818]"
+          className="absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-transparent hover:bg-transparent"
           onClick={handleClose}
         >
           <XIcon className="h-6 w-6" />

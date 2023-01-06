@@ -4,17 +4,20 @@
 import Head from 'next/head';
 import React from 'react';
 import { ImBin } from 'react-icons/im';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 import Header from '@/components/Header';
+import CreateAudiographModal from '@/components/modal/CreateAudiographModal';
 import ViewVideo from '@/components/modal/ViewVideo';
 import Sidebar from '@/components/Sidebar';
 import Table3 from '@/components/Table3';
 
-import { modalState } from '../atoms/modelAtom';
+import { modalState, modalStateAudiograph } from '../atoms/modelAtom';
 
 const Audiograph = () => {
   const showModal = useRecoilValue(modalState);
+  const showItem = useRecoilValue(modalStateAudiograph);
+  const [, setShowModal] = useRecoilState(modalStateAudiograph);
 
   return (
     <div className="h-screen">
@@ -28,7 +31,13 @@ const Audiograph = () => {
         <div className="h-full w-10/12 justify-between bg-[#E5E5E5]  px-4 py-2">
           <div className="mb-4 flex flex-row justify-between bg-[#ffffff] p-16">
             <h1 className="text-2xl font-bold">Create new Audiograph</h1>
-            <button className="rounded-full bg-[#7749F8] px-8 py-2 text-white">
+            <button
+              onClick={() => {
+                setShowModal(true);
+                console.log(showItem);
+              }}
+              className="rounded-full bg-[#7749F8] px-8 py-2 text-white"
+            >
               Create{' '}
             </button>
           </div>
@@ -47,6 +56,7 @@ const Audiograph = () => {
               <Table3 show={true} />
             </div>
           </div>
+          {showItem && <CreateAudiographModal />}
           {showModal && <ViewVideo />}
         </div>
       </div>
