@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDropzone } from 'React-dropzone';
+import { useDropzone } from 'react-dropzone';
 import { HiDownload } from 'react-icons/hi';
 
 interface Props {
