@@ -10,7 +10,7 @@ interface Props {
 function Table1({ show }: Props) {
   return (
     <>
-      <table className={`${show ? 'block' : 'hidden'} table-auto`}>
+      <table className={`${show ? 'block' : 'hidden'} w-full`}>
         <thead>
           <tr className="bg-[#EFEFEF]">
             <th className="p-4">

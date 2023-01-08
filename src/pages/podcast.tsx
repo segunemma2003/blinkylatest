@@ -47,7 +47,7 @@ const Podcast = () => {
                 Delete
               </button>
             </div>
-            <div className="flex flex-col  space-y-4">
+            <div className=" w-full  space-y-4">
               <Table1 show={true} />
             </div>
           </div>
